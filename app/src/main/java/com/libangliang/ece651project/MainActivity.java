@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -18,7 +17,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.libangliang.ece651project.Model.Users;
-import com.libangliang.ece651project.Prevalent.HomeActivity;
 import com.libangliang.ece651project.Prevalent.Prevalent;
 
 import io.paperdb.Paper;

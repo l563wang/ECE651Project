@@ -1,4 +1,4 @@
-package com.libangliang.ece651project.Prevalent;
+package com.libangliang.ece651project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
