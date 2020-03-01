@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.core.content.ContextCompat;
+import androidx.core.widget.TextViewCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -176,12 +177,15 @@ public class LoginActivity extends AppCompatActivity {
                 else{
                     //count not find in database
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
-                    Toast.makeText(LoginActivity.this,"Account with "+phone +"does not exist",
+                    Toast.makeText(LoginActivity.this,"Account with "+phone +" does not exist.",
                             Toast.LENGTH_SHORT).show();
 
                 }
 
             }
+
+
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
