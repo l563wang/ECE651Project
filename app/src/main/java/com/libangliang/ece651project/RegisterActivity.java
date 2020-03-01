@@ -73,16 +73,16 @@ public class RegisterActivity extends AppCompatActivity {
         if(TextUtils.isEmpty(username)){
             Toast.makeText(this,"Empty Username.",Toast.LENGTH_SHORT).show();
         }
-        if(TextUtils.isEmpty(phoneNumber)){
-            Toast.makeText(this,"Empty Phone Number.",Toast.LENGTH_SHORT).show();
+        else if(TextUtils.isEmpty(phoneNumber)){
+                Toast.makeText(this,"Empty Phone Number.",Toast.LENGTH_SHORT).show();
         }
-        if(TextUtils.isEmpty(password)){
+        else if(TextUtils.isEmpty(password)){
             Toast.makeText(this,"Empty Password.",Toast.LENGTH_SHORT).show();
         }
-        if(TextUtils.isEmpty(confirmPassword)){
+        else if(TextUtils.isEmpty(confirmPassword)){
             Toast.makeText(this,"Empty Confirm Password",Toast.LENGTH_SHORT).show();
         }
-        if(!password.equals(confirmPassword)){
+        else if(!password.equals(confirmPassword)){
             Toast.makeText(this,"Inconsistent Password",Toast.LENGTH_SHORT).show();
         }
 
