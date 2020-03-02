@@ -34,9 +34,13 @@ import static org.hamcrest.Matchers.allOf;
 @LargeTest
 @RunWith(AndroidJUnit4.class)
 public class RegisterActivityTest2 {
+    private String userName = "qwert";
+    private String phone = "112233322222";
+    private String password = "123";
+    private String wrongPassword = "1234";
 
     @Rule
-    public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class, false, true);
 
     @Test
     public void registerActivityTest2() {
@@ -70,7 +74,7 @@ public class RegisterActivityTest2 {
                                         0),
                                 2),
                         isDisplayed()));
-        appCompatEditText.perform(replaceText("qwert"), closeSoftKeyboard());
+        appCompatEditText.perform(replaceText(userName), closeSoftKeyboard());
 
         pressBack();
 
@@ -94,7 +98,7 @@ public class RegisterActivityTest2 {
                                         0),
                                 3),
                         isDisplayed()));
-        appCompatEditText2.perform(replaceText("1122333222"), closeSoftKeyboard());
+        appCompatEditText2.perform(replaceText(phone), closeSoftKeyboard());
 
         pressBack();
 
@@ -118,7 +122,7 @@ public class RegisterActivityTest2 {
                                         0),
                                 4),
                         isDisplayed()));
-        appCompatEditText3.perform(replaceText("123"), closeSoftKeyboard());
+        appCompatEditText3.perform(replaceText(password), closeSoftKeyboard());
 
         pressBack();
 
@@ -143,7 +147,7 @@ public class RegisterActivityTest2 {
                                         0),
                                 5),
                         isDisplayed()));
-        appCompatEditText4.perform(replaceText("1234"), closeSoftKeyboard());
+        appCompatEditText4.perform(replaceText(wrongPassword), closeSoftKeyboard());
 
         pressBack();
 
@@ -160,7 +164,7 @@ public class RegisterActivityTest2 {
         onView(withText("Inconsistent Password")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
 
         ViewInteraction appCompatEditText5 = onView(
-                allOf(withId(R.id.register_confirm_password_input), withText("1234"),
+                allOf(withId(R.id.register_confirm_password_input), withText(wrongPassword),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
@@ -170,17 +174,17 @@ public class RegisterActivityTest2 {
         appCompatEditText5.perform(click());
 
         ViewInteraction appCompatEditText6 = onView(
-                allOf(withId(R.id.register_confirm_password_input), withText("1234"),
+                allOf(withId(R.id.register_confirm_password_input), withText(wrongPassword),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
                                 5),
                         isDisplayed()));
-        appCompatEditText6.perform(replaceText("123"));
+        appCompatEditText6.perform(replaceText(password));
 
         ViewInteraction appCompatEditText7 = onView(
-                allOf(withId(R.id.register_confirm_password_input), withText("123"),
+                allOf(withId(R.id.register_confirm_password_input), withText(password),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
