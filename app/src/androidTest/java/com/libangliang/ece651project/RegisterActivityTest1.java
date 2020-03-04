@@ -36,7 +36,7 @@ import static org.hamcrest.Matchers.allOf;
 public class RegisterActivityTest1 {
 
     @Rule
-    public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class, false, true);
+    public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class, true, true);
     private String userName = "qwert";
     private String phone = "123";
     private String password = "123";
@@ -64,148 +64,148 @@ public class RegisterActivityTest1 {
         appCompatButton2.perform(click());
 
         onView(withText("Empty Username.")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
-
-        ViewInteraction appCompatEditText = onView(
-                allOf(withId(R.id.register_username_input),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                2),
-                        isDisplayed()));
-        appCompatEditText.perform(replaceText(userName), closeSoftKeyboard());
-
-        pressBack();
-
-        ViewInteraction appCompatButton3 = onView(
-                allOf(withId(R.id.register_register_btn), withText("Create Account"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                6),
-                        isDisplayed()));
-        appCompatButton3.perform(click());
-
-        onView(withText("Empty Phone Number.")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
-
-        ViewInteraction appCompatEditText2 = onView(
-                allOf(withId(R.id.register_phone_number_input),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                3),
-                        isDisplayed()));
-        appCompatEditText2.perform(replaceText(phone), closeSoftKeyboard());
-
-        pressBack();
-
-        ViewInteraction appCompatButton4 = onView(
-                allOf(withId(R.id.register_register_btn), withText("Create Account"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                6),
-                        isDisplayed()));
-        appCompatButton4.perform(click());
-
-        onView(withText("Empty Password.")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
-
-        ViewInteraction appCompatEditText3 = onView(
-                allOf(withId(R.id.register_password_input),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                4),
-                        isDisplayed()));
-        appCompatEditText3.perform(replaceText(password), closeSoftKeyboard());
-
-        pressBack();
-
-        ViewInteraction appCompatButton5 = onView(
-                allOf(withId(R.id.register_register_btn), withText("Create Account"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                6),
-                        isDisplayed()));
-        appCompatButton5.perform(click());
-
-        onView(withText("Empty Confirm Password")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
-
-
-        ViewInteraction appCompatEditText4 = onView(
-                allOf(withId(R.id.register_confirm_password_input),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                5),
-                        isDisplayed()));
-        appCompatEditText4.perform(replaceText(wrongPassword), closeSoftKeyboard());
-
-        pressBack();
-
-        ViewInteraction appCompatButton6 = onView(
-                allOf(withId(R.id.register_register_btn), withText("Create Account"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                6),
-                        isDisplayed()));
-        appCompatButton6.perform(click());
-
-        onView(withText("Inconsistent Password")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
-
-        ViewInteraction appCompatEditText5 = onView(
-                allOf(withId(R.id.register_confirm_password_input), withText(wrongPassword),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                5),
-                        isDisplayed()));
-        appCompatEditText5.perform(click());
-
-
-        ViewInteraction appCompatEditText6 = onView(
-                allOf(withId(R.id.register_confirm_password_input), withText(wrongPassword),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                5),
-                        isDisplayed()));
-        appCompatEditText6.perform(replaceText(password));
-
-        ViewInteraction appCompatEditText7 = onView(
-                allOf(withId(R.id.register_confirm_password_input), withText(password),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                5),
-                        isDisplayed()));
-        appCompatEditText7.perform(closeSoftKeyboard());
-
-        pressBack();
-
-        ViewInteraction appCompatButton7 = onView(
-                allOf(withId(R.id.register_register_btn), withText("Create Account"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                6),
-                        isDisplayed()));
-        appCompatButton7.perform(click());
-
-        onView(withText("Phone: "+phone+" already used, please login")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
+//
+//            ViewInteraction appCompatEditText = onView(
+//                    allOf(withId(R.id.register_username_input),
+//                            childAtPosition(
+//                                    childAtPosition(
+//                                            withId(android.R.id.content),
+//                                            0),
+//                                    2),
+//                            isDisplayed()));
+//            appCompatEditText.perform(replaceText(userName), closeSoftKeyboard());
+//
+//            pressBack();
+//
+//            ViewInteraction appCompatButton3 = onView(
+//                    allOf(withId(R.id.register_register_btn), withText("Create Account"),
+//                            childAtPosition(
+//                                    childAtPosition(
+//                                            withId(android.R.id.content),
+//                                            0),
+//                                    6),
+//                            isDisplayed()));
+//            appCompatButton3.perform(click());
+//
+//            onView(withText("Empty Phone Number.")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
+//
+//            ViewInteraction appCompatEditText2 = onView(
+//                    allOf(withId(R.id.register_phone_number_input),
+//                            childAtPosition(
+//                                    childAtPosition(
+//                                            withId(android.R.id.content),
+//                                            0),
+//                                    3),
+//                            isDisplayed()));
+//            appCompatEditText2.perform(replaceText(phone), closeSoftKeyboard());
+//
+//            pressBack();
+//
+//            ViewInteraction appCompatButton4 = onView(
+//                    allOf(withId(R.id.register_register_btn), withText("Create Account"),
+//                            childAtPosition(
+//                                    childAtPosition(
+//                                            withId(android.R.id.content),
+//                                            0),
+//                                    6),
+//                            isDisplayed()));
+//            appCompatButton4.perform(click());
+//
+//            onView(withText("Empty Password.")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
+//
+//            ViewInteraction appCompatEditText3 = onView(
+//                    allOf(withId(R.id.register_password_input),
+//                            childAtPosition(
+//                                    childAtPosition(
+//                                            withId(android.R.id.content),
+//                                            0),
+//                                    4),
+//                            isDisplayed()));
+//            appCompatEditText3.perform(replaceText(password), closeSoftKeyboard());
+//
+//            pressBack();
+//
+//            ViewInteraction appCompatButton5 = onView(
+//                    allOf(withId(R.id.register_register_btn), withText("Create Account"),
+//                            childAtPosition(
+//                                    childAtPosition(
+//                                            withId(android.R.id.content),
+//                                            0),
+//                                    6),
+//                            isDisplayed()));
+//            appCompatButton5.perform(click());
+//
+//            onView(withText("Empty Confirm Password")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
+//
+//
+//            ViewInteraction appCompatEditText4 = onView(
+//                    allOf(withId(R.id.register_confirm_password_input),
+//                            childAtPosition(
+//                                    childAtPosition(
+//                                            withId(android.R.id.content),
+//                                            0),
+//                                    5),
+//                            isDisplayed()));
+//            appCompatEditText4.perform(replaceText(wrongPassword), closeSoftKeyboard());
+//
+//            pressBack();
+//
+//            ViewInteraction appCompatButton6 = onView(
+//                    allOf(withId(R.id.register_register_btn), withText("Create Account"),
+//                            childAtPosition(
+//                                    childAtPosition(
+//                                            withId(android.R.id.content),
+//                                            0),
+//                                    6),
+//                            isDisplayed()));
+//            appCompatButton6.perform(click());
+//
+//            onView(withText("Inconsistent Password")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
+//
+//            ViewInteraction appCompatEditText5 = onView(
+//                    allOf(withId(R.id.register_confirm_password_input), withText(wrongPassword),
+//                            childAtPosition(
+//                                    childAtPosition(
+//                                            withId(android.R.id.content),
+//                                            0),
+//                                    5),
+//                            isDisplayed()));
+//            appCompatEditText5.perform(click());
+//
+//
+//            ViewInteraction appCompatEditText6 = onView(
+//                    allOf(withId(R.id.register_confirm_password_input), withText(wrongPassword),
+//                            childAtPosition(
+//                                    childAtPosition(
+//                                            withId(android.R.id.content),
+//                                            0),
+//                                    5),
+//                            isDisplayed()));
+//            appCompatEditText6.perform(replaceText(password));
+//
+//            ViewInteraction appCompatEditText7 = onView(
+//                    allOf(withId(R.id.register_confirm_password_input), withText(password),
+//                            childAtPosition(
+//                                    childAtPosition(
+//                                            withId(android.R.id.content),
+//                                            0),
+//                                    5),
+//                        isDisplayed()));
+//        appCompatEditText7.perform(closeSoftKeyboard());
+//
+//        pressBack();
+//
+//        ViewInteraction appCompatButton7 = onView(
+//                allOf(withId(R.id.register_register_btn), withText("Create Account"),
+//                        childAtPosition(
+//                                childAtPosition(
+//                                        withId(android.R.id.content),
+//                                        0),
+//                                6),
+//                        isDisplayed()));
+//        appCompatButton7.perform(click());
+//
+//        onView(withText("Phone: "+phone+" already used, please login")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
 
     }
 
