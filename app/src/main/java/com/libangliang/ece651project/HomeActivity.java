@@ -29,7 +29,7 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.libangliang.ece651project.Model.Products;
+//import com.libangliang.ece651project.Model.Products;
 import com.libangliang.ece651project.Prevalent.Prevalent;
 import com.libangliang.ece651project.ViewHolder.ProductViewHolder;
 import com.libangliang.ece651project.ui.cart.CartFragment;
