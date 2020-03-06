@@ -1,5 +1,6 @@
 package com.libangliang.ece651project.ui.logout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,11 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.libangliang.ece651project.LoginActivity;
+import com.libangliang.ece651project.MainActivity;
 import com.libangliang.ece651project.R;
+
+import io.paperdb.Paper;
 
 public class LogoutFragment extends Fragment {
 
@@ -23,13 +28,19 @@ public class LogoutFragment extends Fragment {
         logoutViewModel =
                 ViewModelProviders.of(this).get(LogoutViewModel.class);
         View root = inflater.inflate(R.layout.fragment_logout, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        logoutViewModel.getText().observe(this, new Observer<String>() {
+        //final TextView textView = root.findViewById(R.id.text_share);
+      /*  logoutViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
-        });
+        });*/
+
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        startActivity(intent);
+        Paper.book().destroy();
+        getActivity().finish();
+
         return root;
     }
 }
