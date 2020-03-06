@@ -1,19 +1,405 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <TextView
-        android:id="@+id/text_tools"
+        android:id="@+id/user_slogan_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Shop by Categories"
         android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_solid"
+        android:padding="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/user_linear1_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_slogan_category"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/user_fruit_and_vegetable"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:id="@+id/user_fruit_and_vegetable_pic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/fruit_and_veg"
+                android:layout_gravity="center"
+                android:background="@drawable/linear_layout_boarder"
+                />
+
+            <TextView
+                android:id="@+id/user_fruit_and_vegetable_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_fruit_and_vegetable_pic"
+                android:text="Fruit \u0026 Vege"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/user_meat_and_fish"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:id="@+id/user_meat_and_fish_pic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/meat_and_fish"
+                android:layout_gravity="center"
+                android:background="@drawable/linear_layout_boarder"
+                />
+
+            <TextView
+                android:id="@+id/user_meat_and_fish_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_fruit_and_vegetable_pic"
+                android:text="Meat \u0026 Fish"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/user_dairy_and_egg"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:id="@+id/user_dairy_and_egg_pic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/diary_and_egg"
+                android:layout_gravity="center"
+                android:background="@drawable/linear_layout_boarder"
+                />
+
+            <TextView
+                android:id="@+id/user_diary_and_egg_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_fruit_and_vegetable_pic"
+                android:text="Diary \u0026 Egg"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/user_bakery"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:id="@+id/user_bakery_pic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/bakery"
+                android:layout_gravity="center"
+                android:background="@drawable/linear_layout_boarder"
+                />
+
+            <TextView
+                android:id="@+id/user_bakery_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_bakery_pic"
+                android:text="Bakery"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/user_linear2_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_linear1_category_layout"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/user_drinks"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:id="@+id/user_drinks_pic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/drinks"
+                android:layout_gravity="center"
+                android:background="@drawable/linear_layout_boarder"
+                />
+
+            <TextView
+                android:id="@+id/user_drinks_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_drinks_pic"
+                android:text="Drinks"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/user_frozen"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:id="@+id/user_frozen_pic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/frozen"
+                android:layout_gravity="center"
+                android:background="@drawable/linear_layout_boarder"
+                />
+
+            <TextView
+                android:id="@+id/user_frozen_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_frozen_pic"
+                android:text="Frozen"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/user_household"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:id="@+id/user_household_pic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/household"
+                android:layout_gravity="center"
+                android:background="@drawable/linear_layout_boarder"
+                />
+
+            <TextView
+                android:id="@+id/user_household_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_household_pic"
+                android:text="Household"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/user_beauty"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:id="@+id/user_beauty_pic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/beauty"
+                android:layout_gravity="center"
+                android:background="@drawable/linear_layout_boarder"
+                />
+
+            <TextView
+                android:id="@+id/user_beauty_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_beauty_pic"
+                android:text="Beauty"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/user_linear3_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_linear2_category_layout"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/user_toiletries_and_health"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:id="@+id/user_toiletries_and_health_pic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/toiletries"
+                android:layout_gravity="center"
+                android:background="@drawable/linear_layout_boarder"
+                />
+
+            <TextView
+                android:id="@+id/user_toiletries_and_health_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_toiletries_and_health_pic"
+                android:text="Toiletries"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/user_homeware"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:id="@+id/user_homeware_pic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/homeware"
+                android:layout_gravity="center"
+                android:background="@drawable/linear_layout_boarder"
+                />
+
+            <TextView
+                android:id="@+id/homeware_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_homeware_pic"
+                android:text="Homeware"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/user_baby"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:id="@+id/user_baby_pic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/baby"
+                android:layout_gravity="center"
+                android:background="@drawable/linear_layout_boarder"
+                />
+
+            <TextView
+                android:id="@+id/user_baby_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_baby_pic"
+                android:text="Baby"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/user_pet"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:id="@+id/user_pet_pic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/pet"
+                android:layout_gravity="center"
+                android:background="@drawable/linear_layout_boarder"
+                />
+
+            <TextView
+                android:id="@+id/user_pet_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_pet_pic"
+                android:text="Pet"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
+
+
