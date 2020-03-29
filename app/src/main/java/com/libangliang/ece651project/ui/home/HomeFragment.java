@@ -167,6 +167,7 @@ public class HomeFragment extends Fragment {
         };
         //need to connect recyclerView and adapter
         recyclerView.setAdapter(adapter);
+        adapter.startListening();
 
 
 
