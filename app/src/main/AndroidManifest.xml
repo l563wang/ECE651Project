@@ -15,6 +15,7 @@
         <activity android:name=".OrderProductsDetailActivity"></activity>
         <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".CategoriesDisplayActivity" />
+        <activity android:name=".ConfirmFinalOrderActivity" />
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
