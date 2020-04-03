@@ -60,6 +60,14 @@ public class AdminCategoryActivity extends AppCompatActivity {
             }
         });
 
+        checkOrdersBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this,AdminNewOrdersActivity.class);
+                startActivity(intent);
+            }
+        });
+
         editProductsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,5 +78,118 @@ public class AdminCategoryActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+
+
+
+        fruitAndVege.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this,AdminAddNewProductActivity.class);
+                intent.putExtra("category","fruitAndVege");
+                startActivity(intent);
+            }
+        });
+
+        meatAndFish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this,AdminAddNewProductActivity.class);
+                intent.putExtra("category","meatAndFish");
+                startActivity(intent);
+            }
+        });
+
+        dairyAndEgg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this,AdminAddNewProductActivity.class);
+                intent.putExtra("category","dairyAndEgg");
+                startActivity(intent);
+            }
+        });
+
+        bakery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this,AdminAddNewProductActivity.class);
+                intent.putExtra("category","bakery");
+                startActivity(intent);
+            }
+        });
+
+        frozen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this,AdminAddNewProductActivity.class);
+                intent.putExtra("category","frozen");
+                startActivity(intent);
+            }
+        });
+
+        drinks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this,AdminAddNewProductActivity.class);
+                intent.putExtra("category","drinks");
+                startActivity(intent);
+            }
+        });
+
+        household.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this,AdminAddNewProductActivity.class);
+                intent.putExtra("category","household");
+                startActivity(intent);
+            }
+        });
+
+        beauty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this,AdminAddNewProductActivity.class);
+                intent.putExtra("category","beauty");
+                startActivity(intent);
+            }
+        });
+
+        toiletries.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this,AdminAddNewProductActivity.class);
+                intent.putExtra("category","toiletries");
+                startActivity(intent);
+            }
+        });
+
+        homeware.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this,AdminAddNewProductActivity.class);
+                intent.putExtra("category","homeware");
+                startActivity(intent);
+            }
+        });
+
+        baby.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this,AdminAddNewProductActivity.class);
+                intent.putExtra("category","baby");
+                startActivity(intent);
+            }
+        });
+
+        pet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this,AdminAddNewProductActivity.class);
+                intent.putExtra("category","pet");
+                startActivity(intent);
+            }
+        });
     }
 }
