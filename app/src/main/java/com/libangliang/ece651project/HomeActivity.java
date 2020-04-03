@@ -4,46 +4,27 @@ package com.libangliang.ece651project;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 
-import androidx.annotation.NonNull;
-import androidx.core.view.GravityCompat;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
-import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.fragment.app.Fragment;
 
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 //import com.libangliang.ece651project.Model.Products;
 import com.libangliang.ece651project.Prevalent.Prevalent;
-import com.libangliang.ece651project.ViewHolder.ProductViewHolder;
-import com.libangliang.ece651project.ui.cart.CartFragment;
 import com.squareup.picasso.Picasso;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -59,8 +40,8 @@ public class HomeActivity extends AppCompatActivity {
     public FloatingActionButton fab;
     private String type = "";
 
-
-
+    public String byCategory = "";
+    public NavController navController;
 
 
 
@@ -102,7 +83,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-        final NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
@@ -131,12 +112,18 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
         DisplaySelectedScreen(navController);
 
 
 
 
 
+
+    }
+
+    public void searchByCategory(){
+        navController.navigate(R.id.nav_home);
 
     }
 

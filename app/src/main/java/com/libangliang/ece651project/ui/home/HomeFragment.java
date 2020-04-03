@@ -131,6 +131,73 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        homeAct = (HomeActivity) getActivity();
+
+
+
+        if(homeAct.byCategory != ""){
+            serachBtn.setImageResource(R.drawable.clear);
+            searchInput.setText("Searching by "+homeAct.byCategory);
+            FirebaseRecyclerOptions<Products> searchOptions = new FirebaseRecyclerOptions.Builder<Products>().setQuery(productRef.orderByChild("category").startAt(homeAct.byCategory),Products.class).build();
+            FirebaseRecyclerAdapter<Products, ProductViewHolder> searchAdapter = new FirebaseRecyclerAdapter<Products, ProductViewHolder>(searchOptions) {
+                @Override
+                protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Products model) {
+                    holder.cardProductName.setText(model.getName());
+                    holder.cardProductPrice.setText(model.getPrice()+" CAD");
+                    holder.cardProductDescription.setText(model.getDescription());
+                    Log.v("download URL",model.getImage());
+                    Picasso.get().load(model.getImage()).into(holder.cardProductImage);
+
+                    holder.itemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getActivity(), ProductDetailsActivity.class);
+                            intent.putExtra("pid",model.getPid());
+                            startActivity(intent);
+                        }
+                    });
+                }
+
+                @NonNull
+                @Override
+                public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_items_layout,parent,false);
+                    ProductViewHolder viewHolder = new ProductViewHolder(view);
+                    return viewHolder;
+                }
+            };
+
+            recyclerView.setAdapter(searchAdapter);
+            searchAdapter.startListening();
+            homeAct.byCategory = "";
+            serachBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dismissCategory();
+
+
+                }
+            });
+        }
+    }
+
+    private void dismissCategory() {
+        serachBtn.setImageResource(R.drawable.search);
+        searchInput.setText("");
+        serachBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String searchIn = searchInput.getText().toString();
+                setupSearchQuery(searchIn);
+            }
+        });
+        recyclerView.setAdapter(adapter);
+
+    }
+
+    @Override
     public void onStart() {
         super.onStart();
 

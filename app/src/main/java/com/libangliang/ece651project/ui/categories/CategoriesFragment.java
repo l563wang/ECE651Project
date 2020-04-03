@@ -6,12 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.libangliang.ece651project.CategoriesDisplayActivity;
+import com.libangliang.ece651project.HomeActivity;
 import com.libangliang.ece651project.R;
 
 public class CategoriesFragment extends Fragment {
@@ -21,6 +24,9 @@ public class CategoriesFragment extends Fragment {
     private ImageView fruitAndVege,meatAndFish, dairyAndEgg, bakery;
     private ImageView frozen, drinks, household, beauty;
     private ImageView toiletries, homeware, baby, pet;
+
+    HomeActivity HA;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -47,108 +53,124 @@ public class CategoriesFragment extends Fragment {
         fruitAndVege.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), CategoriesDisplayActivity.class);
-                intent.putExtra("category","fruitAndVege");
-                startActivity(intent);
+
+                HA = (HomeActivity) getActivity();
+                HA.byCategory = "fruitAndVege";
+                Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
+                HA.searchByCategory();
+
             }
         });
 
         meatAndFish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),CategoriesDisplayActivity.class);
-                intent.putExtra("category","meatAndFish");
-                startActivity(intent);
+
+                HA = (HomeActivity) getActivity();
+                HA.byCategory = "meatAndFish";
+                Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
+                HA.searchByCategory();
             }
         });
 
         dairyAndEgg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),CategoriesDisplayActivity.class);
-                intent.putExtra("category","dairyAndEgg");
-                startActivity(intent);
+
+                HA = (HomeActivity) getActivity();
+                HA.byCategory = "dairyAndEgg";
+                Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
             }
         });
 
         bakery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),CategoriesDisplayActivity.class);
-                intent.putExtra("category","bakery");
-                startActivity(intent);
+
+                HA = (HomeActivity) getActivity();
+                HA.byCategory = "bakery";
+                Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
+
             }
         });
 
         frozen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),CategoriesDisplayActivity.class);
-                intent.putExtra("category","frozen");
-                startActivity(intent);
+
+                HA = (HomeActivity) getActivity();
+                HA = (HomeActivity) getActivity();
+                HA.byCategory = "frozen";
+                Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
             }
         });
 
         drinks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),CategoriesDisplayActivity.class);
-                intent.putExtra("category","drinks");
-                startActivity(intent);
+
+                HA = (HomeActivity) getActivity();
+                HA.byCategory = "drinks";
+                Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
             }
         });
 
         household.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),CategoriesDisplayActivity.class);
-                intent.putExtra("category","household");
-                startActivity(intent);
+
+                HA = (HomeActivity) getActivity();
+                HA.byCategory = "household";
+                Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
             }
         });
 
         beauty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),CategoriesDisplayActivity.class);
-                intent.putExtra("category","beauty");
-                startActivity(intent);
+
+                HA = (HomeActivity) getActivity();
+                HA.byCategory = "beauty";
+                Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
             }
         });
 
         toiletries.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),CategoriesDisplayActivity.class);
-                intent.putExtra("category","toiletries");
-                startActivity(intent);
+
+                HA = (HomeActivity) getActivity();
+                HA.byCategory = "toiletries";
+                Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
             }
         });
 
         homeware.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),CategoriesDisplayActivity.class);
-                intent.putExtra("category","homeware");
-                startActivity(intent);
+
+                HA.byCategory = "homeware";
+                Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
             }
         });
 
         baby.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),CategoriesDisplayActivity.class);
-                intent.putExtra("category","baby");
-                startActivity(intent);
+
+                HA = (HomeActivity) getActivity();
+                HA.byCategory = "baby";
+                Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
             }
         });
 
         pet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),CategoriesDisplayActivity.class);
-                intent.putExtra("category","pet");
-                startActivity(intent);
+
+                HA = (HomeActivity) getActivity();
+                HA.byCategory = "pet";
+                Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
             }
         });
 
