@@ -80,6 +80,7 @@ public class CategoriesFragment extends Fragment {
                 HA = (HomeActivity) getActivity();
                 HA.byCategory = "dairyAndEgg";
                 Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
+                HA.searchByCategory();
             }
         });
 
@@ -90,6 +91,7 @@ public class CategoriesFragment extends Fragment {
                 HA = (HomeActivity) getActivity();
                 HA.byCategory = "bakery";
                 Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
+                HA.searchByCategory();
 
             }
         });
@@ -99,9 +101,9 @@ public class CategoriesFragment extends Fragment {
             public void onClick(View v) {
 
                 HA = (HomeActivity) getActivity();
-                HA = (HomeActivity) getActivity();
                 HA.byCategory = "frozen";
                 Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
+                HA.searchByCategory();
             }
         });
 
@@ -112,6 +114,7 @@ public class CategoriesFragment extends Fragment {
                 HA = (HomeActivity) getActivity();
                 HA.byCategory = "drinks";
                 Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
+                HA.searchByCategory();
             }
         });
 
@@ -122,6 +125,7 @@ public class CategoriesFragment extends Fragment {
                 HA = (HomeActivity) getActivity();
                 HA.byCategory = "household";
                 Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
+                HA.searchByCategory();
             }
         });
 
@@ -132,6 +136,7 @@ public class CategoriesFragment extends Fragment {
                 HA = (HomeActivity) getActivity();
                 HA.byCategory = "beauty";
                 Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
+                HA.searchByCategory();
             }
         });
 
@@ -142,6 +147,7 @@ public class CategoriesFragment extends Fragment {
                 HA = (HomeActivity) getActivity();
                 HA.byCategory = "toiletries";
                 Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
+                HA.searchByCategory();
             }
         });
 
@@ -151,6 +157,7 @@ public class CategoriesFragment extends Fragment {
 
                 HA.byCategory = "homeware";
                 Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
+                HA.searchByCategory();
             }
         });
 
@@ -161,6 +168,7 @@ public class CategoriesFragment extends Fragment {
                 HA = (HomeActivity) getActivity();
                 HA.byCategory = "baby";
                 Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
+                HA.searchByCategory();
             }
         });
 
@@ -171,6 +179,7 @@ public class CategoriesFragment extends Fragment {
                 HA = (HomeActivity) getActivity();
                 HA.byCategory = "pet";
                 Toast.makeText(getActivity(),HA.byCategory,Toast.LENGTH_SHORT).show();
+                HA.searchByCategory();
             }
         });
 
