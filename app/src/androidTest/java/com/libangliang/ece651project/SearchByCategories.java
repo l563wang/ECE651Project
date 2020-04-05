@@ -13,6 +13,7 @@ import androidx.test.runner.AndroidJUnit4;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
+import org.hamcrest.core.IsInstanceOf;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,6 +22,7 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.replaceText;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
@@ -31,13 +33,13 @@ import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class SearchByCategoryDrink {
+public class SearchByCategories {
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
     @Test
-    public void searchByCategoryDrink() {
+    public void searchByCategories() {
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.main_login_btn), withText("Login"),
                         childAtPosition(
@@ -56,9 +58,39 @@ public class SearchByCategoryDrink {
                                         0),
                                 2),
                         isDisplayed()));
-        appCompatEditText.perform(replaceText("123456789"), closeSoftKeyboard());
+        appCompatEditText.perform(replaceText("123456"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText2 = onView(
+                allOf(withId(R.id.login_phone_number_input), withText("123456"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                2),
+                        isDisplayed()));
+        appCompatEditText2.perform(click());
+
+        ViewInteraction appCompatEditText3 = onView(
+                allOf(withId(R.id.login_phone_number_input), withText("123456"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                2),
+                        isDisplayed()));
+        appCompatEditText3.perform(replaceText("123456789"));
+
+        ViewInteraction appCompatEditText4 = onView(
+                allOf(withId(R.id.login_phone_number_input), withText("123456789"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                2),
+                        isDisplayed()));
+        appCompatEditText4.perform(closeSoftKeyboard());
+
+        ViewInteraction appCompatEditText5 = onView(
                 allOf(withId(R.id.login_password_input),
                         childAtPosition(
                                 childAtPosition(
@@ -66,7 +98,7 @@ public class SearchByCategoryDrink {
                                         0),
                                 3),
                         isDisplayed()));
-        appCompatEditText2.perform(replaceText("123456789"), closeSoftKeyboard());
+        appCompatEditText5.perform(replaceText("123456789"), closeSoftKeyboard());
 
         ViewInteraction appCompatButton2 = onView(
                 allOf(withId(R.id.login_login_btn), withText("Login"),
@@ -109,6 +141,16 @@ public class SearchByCategoryDrink {
                                 0),
                         isDisplayed()));
         appCompatImageView.perform(click());
+
+        ViewInteraction textView = onView(
+                allOf(withId(R.id.card_product_name), withText("Coca-Cola® 355mL Cans, 12 Pack"),
+                        childAtPosition(
+                                childAtPosition(
+                                        IsInstanceOf.<View>instanceOf(android.widget.FrameLayout.class),
+                                        0),
+                                1),
+                        isDisplayed()));
+        textView.check(matches(withText("Coca-Cola® 355mL Cans, 12 Pack")));
     }
 
     private static Matcher<View> childAtPosition(
