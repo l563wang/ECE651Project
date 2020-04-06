@@ -22,7 +22,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignBottom="@id/app_logo"
         android:layout_marginBottom="-10dp"
-        android:text="Libang Liang is Handsome"
+        android:text="We are here for you"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
