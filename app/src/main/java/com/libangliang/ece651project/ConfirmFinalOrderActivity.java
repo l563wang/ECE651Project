@@ -55,9 +55,6 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
             }
         });
 
-
-
-
     }
 
     private void check() {
