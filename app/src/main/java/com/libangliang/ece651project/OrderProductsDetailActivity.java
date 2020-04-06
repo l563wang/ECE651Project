@@ -39,8 +39,16 @@ public class OrderProductsDetailActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
 
     private DatabaseReference ordersRef;
+    ValueEventListener listener;
 
     private String orderid, status;
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        ordersRef.removeEventListener(listener);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +78,7 @@ public class OrderProductsDetailActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
-        ordersRef.addValueEventListener(new ValueEventListener() {
+        listener = ordersRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Orders orders = dataSnapshot.getValue(Orders.class);
